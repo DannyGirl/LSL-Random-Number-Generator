@@ -1,0 +1,15 @@
+float random;
+float randomWhole;
+default
+{
+    state_entry()
+    {
+        llSetText("Random Number Generator", <1, 1, 1>, 1);
+    }
+    touch_start (integer num)
+    {
+        random = llFrand(1.0)*10;
+        randomWhole = llRound(random);
+        llSay(0, "Your random number between 1 and 10 is... " + (string)randomWhole);
+    }
+}
